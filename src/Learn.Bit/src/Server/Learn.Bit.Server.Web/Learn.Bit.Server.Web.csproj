@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <UserSecretsId>382FEC42-5283-4CBD-A3F3-1289605F9259</UserSecretsId>
+        <ValidateExecutableReferencesMatchSelfContained>false</ValidateExecutableReferencesMatchSelfContained>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="NWebsec.AspNetCore.Middleware" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Learn.Bit.Server.Api\Learn.Bit.Server.Api.csproj" />
+        <ProjectReference Include="..\..\Client\Learn.Bit.Client.Web\Learn.Bit.Client.Web.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="Learn.Bit.Shared.Enums" />
+    </ItemGroup>
+
+    <!--
+    https://learn.microsoft.com/en-us/dotnet/core/docker/publish-as-container
+    https://learn.microsoft.com/en-us/visualstudio/containers/container-msbuild-properties
+    -->
+    <PropertyGroup>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+        <EnableSdkContainerDebugging Condition="'$(Configuration)' == 'Debug'">True</EnableSdkContainerDebugging>
+    </PropertyGroup>
+
+</Project>

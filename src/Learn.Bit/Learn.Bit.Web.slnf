@@ -1,0 +1,13 @@
+{
+  "solution": {
+    "path": "Learn.Bit.sln",
+    "projects": [
+      "src\\Client\\Learn.Bit.Client.Core\\Learn.Bit.Client.Core.csproj",
+      "src\\Client\\Learn.Bit.Client.Web\\Learn.Bit.Client.Web.csproj",
+      "src\\Server\\Learn.Bit.Server.Api\\Learn.Bit.Server.Api.csproj",
+      "src\\Server\\Learn.Bit.Server.Web\\Learn.Bit.Server.Web.csproj",
+      "src\\Shared\\Learn.Bit.Shared.csproj",
+      "src\\Tests\\Learn.Bit.Tests.csproj"
+    ]
+  }
+}

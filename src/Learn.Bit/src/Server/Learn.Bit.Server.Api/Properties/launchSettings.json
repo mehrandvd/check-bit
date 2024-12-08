@@ -1,0 +1,53 @@
+{
+    "profiles": {
+        "Learn.Bit.Server.Api": {
+            "commandName": "Project",
+            "launchBrowser": true,
+            "launchUrl": "swagger",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "dotnetRunMessages": true,
+            "applicationUrl": "http://localhost:5223"
+        },
+        "WSL": {
+            "commandName": "WSL2",
+            "launchBrowser": true,
+            "launchUrl": "http://localhost:5223/swagger",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development",
+                "ASPNETCORE_URLS": "http://localhost:5223"
+            }
+        },
+        "Docker": {
+            "commandName": "SdkContainer",
+            "launchBrowser": true,
+            "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/swagger",
+            "DockerfileRunArguments": "-v C:\\DockerVolumes\\382FEC42-5283-4CBD-A3F3-1289605F9259:/container_volume",
+            "environmentVariables": {
+                "ASPNETCORE_HTTP_PORTS": "5223",
+                "ConnectionStrings__SqliteConnectionString": "Data Source=/container_volume/App_Data/Learn.BitDb.db;"
+            },
+            "publishAllPorts": true,
+            "useSSL": false,
+            "httpPort": 5223
+        },
+        "IIS Express": {
+            "commandName": "IISExpress",
+            "launchBrowser": true,
+            "launchUrl": "swagger",
+            "environmentVariables": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        }
+    },
+    "iisSettings": {
+        "windowsAuthentication": false,
+        "anonymousAuthentication": true,
+        "iisExpress": {
+            "applicationUrl": "http://localhost:57278/",
+            "httpPort": 5223
+        }
+    },
+    "$schema": "http://json.schemastore.org/launchsettings.json"
+}
